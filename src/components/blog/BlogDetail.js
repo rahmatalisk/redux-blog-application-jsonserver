@@ -1,5 +1,6 @@
 import React from "react";
 import { ColorRing } from "react-loader-spinner";
+import Loading from "../ui/Loading";
 import LikeSaved from "./LikeSaved";
 
 const BlogDetail = ({ blog, isLoading, isError, error }) => {
@@ -8,15 +9,7 @@ const BlogDetail = ({ blog, isLoading, isError, error }) => {
   // decide what to render
   let content;
 
-  if (isLoading) content =  <ColorRing
-  visible={true}
-  height="80"
-  width="80"
-  ariaLabel="blocks-loading"
-  wrapperStyle={{}}
-  wrapperClass="blocks-wrapper"
-  colors={['']}
-/>;
+  if (isLoading) content =  <Loading/>;
   if (!isLoading && isError)
     content = <div className="col-span-12">{error}</div>;
 
